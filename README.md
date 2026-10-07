@@ -120,4 +120,3 @@ See `docs/LAUNCH-READINESS.md` for the current state of AI, location-based disco
 - [WHO medical AI guidance](https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models): limitations and risks of health AI.
 
 Original illustrations are included locally. DM Sans, Manrope and Lucide assets are distributed through their respective open-source packages; preserve package license notices when redistributing them.
-

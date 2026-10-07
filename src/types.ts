@@ -1,0 +1,114 @@
+export type User = {
+  _id: string;
+  name: string;
+  email: string;
+  role: "patient" | "clinic" | "pharmacy" | "admin";
+  facilityId?: string;
+};
+export type Location = {
+  id: string;
+  city: string;
+  country: string;
+  code: string;
+  timeZone: string;
+  lat: number;
+  lng: number;
+  symbol: string;
+  currency: string;
+};
+export type Config = {
+  demo: boolean;
+  ai: boolean;
+  emailDelivery?: boolean;
+  emergencyEmailDelivery?: boolean;
+  locations: Location[];
+  countries: string[];
+  slots: string[];
+};
+export type Facility = {
+  _id: string;
+  name: string;
+  kind: "hospital" | "pharmacy";
+  city: string;
+  country: string;
+  locationId: string;
+  timeZone: string;
+  lat: number;
+  lng: number;
+  services: string[];
+  accepting: boolean;
+  hours: string;
+  description: string;
+  address: string;
+  phone?: string;
+  sample: boolean;
+  updatedAt: string;
+  color: string;
+  image: string;
+};
+export type Product = {
+  _id: string;
+  pharmacyId: string;
+  name: string;
+  category: string;
+  description: string;
+  price: number;
+  currency: string;
+  stock: number;
+  prescription: boolean;
+  icon: string;
+};
+export type Appointment = {
+  _id: string;
+  facilityId: string;
+  facilityName: string;
+  patientName: string;
+  doctorId?: string;
+  doctorName?: string | null;
+  date: string;
+  time: string;
+  timeZone: string;
+  service: string;
+  reason?: string;
+  status: string;
+};
+export type Doctor = {
+  _id: string;
+  facilityId: string;
+  name: string;
+  specialty: string;
+  active: boolean;
+  registration?: string;
+};
+export type AvailableTime = {
+  _id: string;
+  facilityId: string;
+  doctorId: string;
+  date: string;
+  time: string;
+};
+export type Order = {
+  _id: string;
+  pharmacyId: string;
+  pharmacyName: string;
+  patientName: string;
+  productName: string;
+  quantity: number;
+  fulfillmentMethod?: "pickup" | "delivery";
+  deliveryArea?: string;
+  total: number;
+  currency: string;
+  status: string;
+  createdAt: string;
+};
+export type Application = {
+  _id: string;
+  name: string;
+  kind: string;
+  country: string;
+  region?: string;
+  city: string;
+  registration: string;
+  status: string;
+  email: string;
+};

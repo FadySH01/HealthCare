@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "AERIX — Your health, connected",
+  "short_name": "AERIX",
+  "description": "A clear next step in care. AERIX is an early demo and does not dispatch emergency help.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8f9fb",
+  "theme_color": "#292a3d",
+  "icons": [
+    { "src": "/aerix-app.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

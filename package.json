@@ -1,0 +1,53 @@
+{
+  "name": "aerix-health",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "setup:database": "powershell -NoProfile -File SETUP-DATABASE.ps1",
+    "setup:admin": "node --env-file-if-exists=.env server/setup-admin.js",
+    "check:database": "node --env-file-if-exists=.env server/check-database.js",
+    "setup:email": "powershell -NoProfile -File SETUP-EMAIL.ps1",
+    "setup:email-web": "powershell -NoProfile -File SETUP-EMAIL-WEB.ps1",
+    "check:email": "node --env-file-if-exists=.env server/check-email.js",
+    "setup:ai": "powershell -NoProfile -File SETUP-AI.ps1",
+    "check:ai": "node --env-file-if-exists=.env server/check-ai.js",
+    "dev": "node scripts/dev.js",
+    "dev:atlas": "node scripts/dev.js --atlas",
+    "build": "tsc -b && vite build --configLoader native",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test tests/*.test.js",
+    "seed": "node --env-file-if-exists=.env server/seed.js",
+    "dev:vite": "set DEMO_MODE=true&& set DEMO_USE_DATABASE=true&& set DEMO_ALLOW_ATLAS_PREVIEW=false&& concurrently -k -n API,WEB \"node --env-file-if-exists=.env server/index.js\" \"vite --configLoader native --host 127.0.0.1\""
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.2.0",
+    "@fontsource/manrope": "^5.2.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "mongodb": "^6.17.0",
+    "nodemailer": "^10.0.10",
+    "openai": "^6.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "concurrently": "^9.1.0",
+    "prettier": "^3.9.7",
+    "supertest": "^7.1.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.3.0"
+  }
+}

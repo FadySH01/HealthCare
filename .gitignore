@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.aerix-preview-dist/
+.env
+.env.*
+!.env.example
+.data/
+.secrets/
+.npm-cache/
+test-results/
+*.tsbuildinfo
+.aerix-build-check/
+*.log
+coverage/
